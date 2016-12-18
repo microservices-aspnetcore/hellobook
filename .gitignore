@@ -1,0 +1,7 @@
+project.lock.json
+*~
+\#*
+bin
+obj
+.vscode/
+appsettings.json
