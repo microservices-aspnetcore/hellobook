@@ -1,7 +1,6 @@
-project.lock.json
 *~
 \#*
-bin
-obj
+bin/
+obj/
 .vscode/
 appsettings.json

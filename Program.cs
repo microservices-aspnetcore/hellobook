@@ -1,9 +1,27 @@
 using System;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 
-class Program
+
+namespace HelloWorld
 {
-    static void Main(string[] args)
+    public class Program
     {
-        Console.WriteLine("Hello World!");
+        public static void Main(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+              .Build();
+
+
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseStartup<Startup>()
+                .UseConfiguration(config)
+                .Build();
+
+            host.Run();            
+        }
     }
 }
